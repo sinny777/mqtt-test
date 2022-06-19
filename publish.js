@@ -1,6 +1,6 @@
 
 const mqtt = require('mqtt')
-import * as dotenv from "dotenv";
+const dotenv = require('dotenv')
 
 dotenv.config();
 let env_path = process.env.NODE_ENV;
