@@ -9,6 +9,7 @@
   "author": "Gurvinder Singh",
   "license": "ISC",
   "dependencies": {
+    "@influxdata/influxdb-client": "^1.27.0",
     "dotenv": "^16.0.1",
     "mqtt": "^4.3.7"
   }

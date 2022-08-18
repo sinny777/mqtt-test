@@ -25,7 +25,8 @@ function init(){
     var appId = process.env.APP_ID;
     var clientId = "a:rqeofj:InfluxDBCloud";
     var apiKey = process.env.APP_API_KEY;
-    var topic = "iot-2/type/HB_Water/id/HB_Water_123456789/evt/level/fmt/json";
+    var topic = "iot-2/type/+/id/+/evt/status/fmt/json";
+    // var topic = "iot-2/evt/status/fmt/json";
     var qos = 0;   
     
     options = {
@@ -45,7 +46,7 @@ function init(){
         const client  = mqtt.connect(MQTT_URL, options);
         
         client.on('message', function (topic, message) {
-            console.log(message.toString());
+            console.log('topic: ', topic, 'Message: ', message.toString());
           //   client.end()
         })
 

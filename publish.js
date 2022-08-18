@@ -46,11 +46,13 @@ function init_publish(){
         clearTimeout(timeout);
     }
     
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 100; i++) {
         timeout = setTimeout(function (i) { return function() {
             const d = new Date();
+            const level = i * Math.floor(Math.random() * 11);
+            const energy =  Math.floor(Math.random() * 999);
             data = {
-                "d": {"level": i * 20, "datetime": d.getTime()}
+                "d": {"level": level, "switch": 1, "energy": energy, "datetime": d.getTime()}
             }
             publish(data);
         }}(i), i * 5000);
